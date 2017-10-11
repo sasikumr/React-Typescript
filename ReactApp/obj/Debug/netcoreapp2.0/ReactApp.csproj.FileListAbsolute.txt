@@ -1,0 +1,11 @@
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\bin\Debug\netcoreapp2.0\ReactApp.deps.json
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\bin\Debug\netcoreapp2.0\ReactApp.runtimeconfig.json
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\bin\Debug\netcoreapp2.0\ReactApp.runtimeconfig.dev.json
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\bin\Debug\netcoreapp2.0\ReactApp.dll
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\bin\Debug\netcoreapp2.0\ReactApp.pdb
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\obj\Debug\netcoreapp2.0\ReactApp.csprojResolveAssemblyReference.cache
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\obj\Debug\netcoreapp2.0\ReactApp.csproj.CoreCompileInputs.cache
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\obj\Debug\netcoreapp2.0\ReactApp.AssemblyInfoInputs.cache
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\obj\Debug\netcoreapp2.0\ReactApp.AssemblyInfo.cs
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\obj\Debug\netcoreapp2.0\ReactApp.dll
+C:\Users\sasikumar.nagalingam\source\repos\ReactApp\ReactApp\obj\Debug\netcoreapp2.0\ReactApp.pdb
