@@ -6,20 +6,16 @@ import { TabContainer, Tab } from '../../shared/TabContainerComponent/TabContain
 import $ from 'jquery';
 import ValicValidationMessage from '../../shared/ValicValidationMessageComponent/ValicValidationMessageComponent';
 import Loader from '../../shared/LoaderComponent/LoaderComponent';
-import { validateFormField } from '../../shared/utility/Utility';
+import { validateFormField } from '../../shared/utility/utility';
 import { PersonalInformationContainer } from './PersonalInformationContainer';
 import { InvestorProfileContainer } from './InvestorProfileContainer';
 import { IncomeSourceContainer } from './IncomeSourceContainer';
 import { agileneturl } from '../../constants';
-import { AddErrorMessage } from '../../actions/ValidationMessageAction';
-//import {ProspectAPI} from '../api/prospectApi';
-//import * as ActionTypes from '../actions/actionTypes';
-import * as ProspectAction from '../../actions/ProspectAction';
 import './ProspectEditContainer.css';
 import { ApplicationState } from '../../store';
-import * as ProspectStore from '../../store/Prospect'
-import * as StateStore from '../../store/States';
-import * as LoaderStore from '../../store/Loader';
+import * as ProspectStore from '../../store/prospect'
+import * as StateStore from '../../store/states';
+import * as LoaderStore from '../../store/loader';
 import * as ValidationMessageStore from '../../store/validationMessage';
 
 type ProspectEditProps = ProspectStore.ProspectState

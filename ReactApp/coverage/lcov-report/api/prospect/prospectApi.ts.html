@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for api/prospect/prospectApi.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">api/prospect</a> prospectApi.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.21% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/214</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.1% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/91</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.65% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/210</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿//import * as ProspectAction from '../../actions/ProspectAction';
+import  ApiUrl  from '../apiUrl.dev';
+import fetch from 'isomorphic-fetch';
+import { agileneturl } from '../../constants';
+//import * as ValidationMessage from '../../actions/ValidationMessageAction';
+import * as ActionTypes from '../../constants/ActionTypes';
+import * as LoaderAction from '../../store/Loader';
+import * as ValidationMessageAction from '../../store/validationMessage';
+import * as ProspectAction from '../../store/Prospect';
+import * as StateAction from '../../store/States';
+&nbsp;
+//import errorhandler from 'errorhandler';
+//import connect from 'connect';
+interface Prospect{
+FirstName:string;
+LastName:string;
+Ssn:string;
+Id:number;
+&nbsp;
+}
+const advisorUrl = ApiUrl.advisorUrl;
+const participantUrl = ApiUrl.participantUrl;
+&nbsp;
+export const ProspectMiddleWare = (store:any) =&gt; (next:any) =&gt; (action:any) =&gt; {
+    switch (action.type) {
+<span class="branch-0 cbranch-no" title="branch not covered" >        case ActionTypes.GET_PROSPECT_REQUEST:</span>
+            //next(ProspectAction.loaderBegin());
+<span class="cstat-no" title="statement not covered" >            next(LoaderAction.actionCreators.loaderBegin());</span>
+<span class="cstat-no" title="statement not covered" >            return fetch(`${participantUrl}prospect/${action.id}`, {</span>
+                method: 'GET'
+            })
+                .then(<span class="fstat-no" title="function not covered" >(</span>response:any) =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
+                .then(<span class="fstat-no" title="function not covered" >data =&gt; {</span>
+                    //console.log(data);
+                    let prospect = <span class="cstat-no" title="statement not covered" >{} as any;</span>
+<span class="cstat-no" title="statement not covered" >                    if (data !== undefined &amp;&amp; data !== null) {</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.firstName = data.FirstName;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.lastName = data.LastName;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.ssn = data.Ssn;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.isNew = true;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.clientProspectId = data.Id;</span>
+<span class="cstat-no" title="statement not covered" >                        if (data.Id &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.isNew = false;</span>
+                        }
+                        else {
+<span class="cstat-no" title="statement not covered" >                            prospect.isNew = true;</span>
+                        }
+                        let homeAddressStreet1, homeAddressStreet2, homeAddressStreet3, homeAddressZipCode, homeAddressState, homeAddressCity;
+                        let mailingAddressStreet1, mailingAddressStreet2, mailingAddressStreet3, mailingAddressZipCode, mailingAddressState, mailingAddressCity;
+<span class="cstat-no" title="statement not covered" >                        if (data.Addresses !== undefined &amp;&amp; data.Addresses !== null) {</span>
+<span class="cstat-no" title="statement not covered" >                            data.Addresses["$values"].forEach(<span class="fstat-no" title="function not covered" >function (</span>address:any) {</span>
+                                //data.Addresses.forEach(function (address) {
+<span class="cstat-no" title="statement not covered" >                                if (address.AddressType === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                                    homeAddressStreet1 = address.Street1;</span>
+<span class="cstat-no" title="statement not covered" >                                    homeAddressStreet2 = address.Street2;</span>
+<span class="cstat-no" title="statement not covered" >                                    homeAddressStreet3 = address.Street3;</span>
+<span class="cstat-no" title="statement not covered" >                                    homeAddressState = address.State;</span>
+<span class="cstat-no" title="statement not covered" >                                    homeAddressCity = address.City;</span>
+                                    //homeAddressCountry = address.Country;
+<span class="cstat-no" title="statement not covered" >                                    homeAddressZipCode = address.Zip;</span>
+                                }
+                                else <span class="cstat-no" title="statement not covered" >if (address.AddressType === 2) {</span>
+<span class="cstat-no" title="statement not covered" >                                    mailingAddressStreet1 = address.Street1;</span>
+<span class="cstat-no" title="statement not covered" >                                    mailingAddressStreet2 = address.Street2;</span>
+<span class="cstat-no" title="statement not covered" >                                    mailingAddressStreet3 = address.Street3;</span>
+<span class="cstat-no" title="statement not covered" >                                    mailingAddressState = address.State;</span>
+<span class="cstat-no" title="statement not covered" >                                    mailingAddressCity = address.City;</span>
+                                    //mailingAddressCountry = address.Country;
+<span class="cstat-no" title="statement not covered" >                                    mailingAddressZipCode = address.Zip;</span>
+                                }
+                            });
+                        }
+&nbsp;
+&nbsp;
+                        let homePhoneNumber; let workPhoneNumber; let otherPhoneNumber;
+<span class="cstat-no" title="statement not covered" >                        if (data.PhoneNumbers !== null &amp;&amp; data.PhoneNumbers !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                            data.PhoneNumbers["$values"].forEach(<span class="fstat-no" title="function not covered" >function (</span>phone:any) {</span>
+                                //data.PhoneNumbers.forEach((phone) =&gt; {
+<span class="cstat-no" title="statement not covered" >                                if (phone.PhoneType === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                                    homePhoneNumber = phone.Number;</span>
+                                }
+                                else <span class="cstat-no" title="statement not covered" >if (phone.PhoneType === 1) {</span>
+<span class="cstat-no" title="statement not covered" >                                    workPhoneNumber = phone.Number;</span>
+                                }
+                                else <span class="cstat-no" title="statement not covered" >if (phone.PhoneType === 5) {</span>
+<span class="cstat-no" title="statement not covered" >                                    otherPhoneNumber = phone.Number;</span>
+                                }
+&nbsp;
+                            });
+                        }
+&nbsp;
+                        let isReferral = <span class="cstat-no" title="statement not covered" >false;</span>
+<span class="cstat-no" title="statement not covered" >                        if (data.ReferralDate !== null &amp;&amp; data.ReferralDate !== undefined &amp;&amp; new Date(data.ReferralDate.toString()).getFullYear() &gt; 1900) {</span>
+<span class="cstat-no" title="statement not covered" >                            isReferral = true;</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        prospect.title = data.Title;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.middleInitial = data.MiddleInitial !== null ? data.MiddleInitial : '';</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.dateOfBirth = data.DateOfBirth !== null &amp;&amp; data.DateOfBirth !== undefined ? new Date(data.DateOfBirth.toString()).toISOString().substr(0, 10) : '';</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.gender = data.Gender !== null &amp;&amp; data.Gender !== undefined ? data.Gender.toString() : '';</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.usCitizen = data.UsCitizenFlag !== null &amp;&amp; data.UsCitizenFlag !== undefined ? data.UsCitizenFlag.toString() : '';</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.maritalStatus = data.MaritalStatus !== null &amp;&amp; data.MaritalStatus !== undefined ? data.MaritalStatus.toString() : '';</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.homeAddressLine1 = homeAddressStreet1;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.homeAddressLine2 = homeAddressStreet2;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.homeAddressLine3 = homeAddressStreet3;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.homeAddressCity = homeAddressCity;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.homeAddressState = homeAddressState;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.homeAddressZipCode = homeAddressZipCode;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.mailingAddressLine1 = mailingAddressStreet1;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.mailingAddressLine2 = mailingAddressStreet2;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.mailingAddressLine3 = mailingAddressStreet3;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.mailingAddressCity = mailingAddressCity;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.mailingAddressState = mailingAddressState;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.mailingAddressZipCode = mailingAddressZipCode;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.homePhone = homePhoneNumber;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.workPhone = workPhoneNumber;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.otherPhone = otherPhoneNumber;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.referral = isReferral;</span>
+<span class="cstat-no" title="statement not covered" >                        prospect.emailAddress = data.Email;</span>
+<span class="cstat-no" title="statement not covered" >                        if (data.ProspectInvestorProfile !== null &amp;&amp; data.ProspectInvestorProfile !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.previousFunds = data.ProspectInvestorProfile.InvestmentExperience_Flag !== undefined &amp;&amp; data.ProspectInvestorProfile.InvestmentExperience_Flag !== null ? data.ProspectInvestorProfile.InvestmentExperience_Flag.toString() : '';</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.FINRA = data.ProspectInvestorProfile.Finra_Flag !== undefined &amp;&amp; data.ProspectInvestorProfile.Finra_Flag !== null ? data.ProspectInvestorProfile.Finra_Flag.toString() : '';</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.investmentObjective = data.ProspectInvestorProfile.InvestmentObjective;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.riskProfile = data.ProspectInvestorProfile.RiskProfile;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.annualHouseholdIncomeRange = data.ProspectInvestorProfile.HouseholdIncomeRange;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.netWorthRange = data.ProspectInvestorProfile.NetWorthRange;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.lifeInsuranceRange = data.ProspectInvestorProfile.LifeInsuranceRange;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.taxBracket = data.ProspectInvestorProfile.TaxBracketNumber;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.dependentsNo = data.ProspectInvestorProfile.DepedentNumber;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.ages = data.ProspectInvestorProfile.Ages;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.currentEmployer = data.ProspectInvestorProfile.CurrentEmployer;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.employmentStatus = data.ProspectInvestorProfile.EmploymentStatus;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.occupation = data.ProspectInvestorProfile.Occupation;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.employerAddress = data.ProspectInvestorProfile.EmployerAddress;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.employerCity = data.ProspectInvestorProfile.EmployerCity;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.employerState = data.ProspectInvestorProfile.EmployerState;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.employerZipCode = data.ProspectInvestorProfile.EmployerZipCode;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.employerSalary = data.ProspectInvestorProfile.Salary;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.hireDate = data.ProspectInvestorProfile.HireDate !== null &amp;&amp; data.ProspectInvestorProfile.HireDate !== undefined ? new Date(data.ProspectInvestorProfile.HireDate.toString()).toISOString().substr(0, 10) : '';</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.expectedAnnuityDate = data.ProspectInvestorProfile.ExpectedAnnuityDate !== null &amp;&amp; data.ProspectInvestorProfile.ExpectedAnnuityDate !== undefined ? new Date(data.ProspectInvestorProfile.ExpectedAnnuityDate.toString()).toISOString().substr(0, 10) : '';</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.isInvestorProfileNew = false;</span>
+                        }
+                        else {
+<span class="cstat-no" title="statement not covered" >                            prospect.isInvestorProfileNew = true;</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        if (data.ProspectIncomeSource !== undefined &amp;&amp; data.ProspectIncomeSource !== null) {</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.incomeAccountSalary = data.ProspectIncomeSource.Salary;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.socialSecurity = data.ProspectIncomeSource.SocialSecurity;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.pensionBenefits = data.ProspectIncomeSource.PensionBenefits;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.investmentIncome = data.ProspectIncomeSource.InvestmentIncome;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.rmd = data.ProspectIncomeSource.RMD;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.other = data.ProspectIncomeSource.Other;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.expensesAmount = data.ProspectIncomeSource.ExpensesAmount;</span>
+<span class="cstat-no" title="statement not covered" >                            prospect.isIncomeSourceNew = false;</span>
+                        }
+                        else {
+<span class="cstat-no" title="statement not covered" >                            prospect.isIncomeSourceNew = true;</span>
+                        }
+                    }
+                    else {
+<span class="cstat-no" title="statement not covered" >                        prospect.isNew = true;</span>
+                    }
+                    //next(ProspectAction.fetchProspectSuccess(prospect))
+                    //next(ProspectAction.loaderComplete());
+<span class="cstat-no" title="statement not covered" >                    next(ProspectAction.actionCreators.fetchProspectSuccess(prospect));</span>
+<span class="cstat-no" title="statement not covered" >                    next(LoaderAction.actionCreators.loaderEnd());</span>
+                    //return Promise.resolve();
+                })
+                .catch(<span class="fstat-no" title="function not covered" >error =&gt; {</span>
+                   // next(ValidationMessage.AddErrorMessage('', "Unable to get prospect"));
+                    //next(ProspectAction.fetchProspectFailed());
+                    //next(ProspectAction.loaderComplete());
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    next(ValidationMessageAction.actionCreators.addErrorMessage('', "Unable to get prospect"));</span>
+<span class="cstat-no" title="statement not covered" >                    next(ProspectAction.actionCreators.fetchProspectFailed());</span>
+<span class="cstat-no" title="statement not covered" >                    next(LoaderAction.actionCreators.loaderEnd());</span>
+&nbsp;
+                    //console.log(error);
+                    //return Promise.resolve();
+                });
+            //break;
+        case ActionTypes.GET_STATES_REQUEST:
+            //next(ProspectAction.loaderBegin());
+            next(LoaderAction.actionCreators.loaderBegin());
+            return fetch(`${advisorUrl}advisor/states`)
+                .then(<span class="fstat-no" title="function not covered" >response =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span></span>
+                .then(<span class="fstat-no" title="function not covered" >json =&gt; {</span>
+                    //next(ProspectAction.fetchStatesSuccess(json["$values"]))
+                    //next(ProspectAction.loaderComplete());
+<span class="cstat-no" title="statement not covered" >                    next(StateAction.actionCreators.fetchStateSuccess(json["$values"]))</span>
+<span class="cstat-no" title="statement not covered" >                    next(LoaderAction.actionCreators.loaderEnd());</span>
+&nbsp;
+                })
+                .catch(<span class="fstat-no" title="function not covered" >error =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                    console.log('request states failed', error);</span>
+                    //next(ProspectAction.loaderComplete());
+                    //next(ValidationMessage.AddErrorMessage('', "Unable to get states"));
+                    //next(ProspectAction.fetchStatesFailed());
+<span class="cstat-no" title="statement not covered" >                    next(ValidationMessageAction.actionCreators.addErrorMessage('', "Unable to get states"));</span>
+<span class="cstat-no" title="statement not covered" >                    next(StateAction.actionCreators.fetchStatesFailed());</span>
+<span class="cstat-no" title="statement not covered" >                    next(LoaderAction.actionCreators.loaderEnd());</span>
+&nbsp;
+                    //throw error;
+                    //return error;
+                });
+            //break;
+<span class="branch-2 cbranch-no" title="branch not covered" >        case ActionTypes.UPDATE_PROSPECT_REQUEST:</span>
+            let state = <span class="cstat-no" title="statement not covered" >store.getState();</span>
+            let prospect = <span class="cstat-no" title="statement not covered" >state.ProspectDetail;</span>
+            //next(ProspectAction.loaderBegin());
+<span class="cstat-no" title="statement not covered" >            next(LoaderAction.actionCreators.loaderBegin());</span>
+            let validForm = <span class="cstat-no" title="statement not covered" >true as any;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            state.errors.forEach(<span class="fstat-no" title="function not covered" >function (</span>error, index) {</span>
+<span class="cstat-no" title="statement not covered" >                if (error.errorMessage !== "") {</span>
+<span class="cstat-no" title="statement not covered" >                    validForm = false;</span>
+                }
+            });
+            //console.log(validForm);
+<span class="cstat-no" title="statement not covered" >            if (validForm != false) {</span>
+                var plainSSN = <span class="cstat-no" title="statement not covered" >prospect.ssn;</span>
+<span class="cstat-no" title="statement not covered" >                console.log(plainSSN);</span>
+<span class="cstat-no" title="statement not covered" >                plainSSN = plainSSN.split('-').join('').split('_').join('');</span>
+&nbsp;
+                var referral;
+<span class="cstat-no" title="statement not covered" >                if (prospect.referral === true) {</span>
+<span class="cstat-no" title="statement not covered" >                    referral = new Date().toUTCString();</span>
+                }
+                var homeAddress = <span class="cstat-no" title="statement not covered" >{} as any;</span>
+<span class="cstat-no" title="statement not covered" >                homeAddress.Street1 = prospect.homeAddressLine1;</span>
+<span class="cstat-no" title="statement not covered" >                homeAddress.Street2 = prospect.homeAddressLine2;</span>
+<span class="cstat-no" title="statement not covered" >                homeAddress.Street3 = prospect.homeAddressLine3;</span>
+<span class="cstat-no" title="statement not covered" >                homeAddress.City = prospect.homeAddressCity;</span>
+<span class="cstat-no" title="statement not covered" >                homeAddress.State = prospect.homeAddressState;</span>
+<span class="cstat-no" title="statement not covered" >                homeAddress.Zip = prospect.homeAddressZipCode;</span>
+<span class="cstat-no" title="statement not covered" >                homeAddress.AddressType = 0;</span>
+                var address = <span class="cstat-no" title="statement not covered" >[] as any;</span>
+<span class="cstat-no" title="statement not covered" >                address.push(homeAddress);</span>
+                var mailingAddress = <span class="cstat-no" title="statement not covered" >{} as any;</span>
+<span class="cstat-no" title="statement not covered" >                mailingAddress.Street1 = prospect.mailingAddressLine1;</span>
+<span class="cstat-no" title="statement not covered" >                mailingAddress.Street2 = prospect.mailingAddressLine2;</span>
+<span class="cstat-no" title="statement not covered" >                mailingAddress.Street3 = prospect.mailingAddressLine3;</span>
+<span class="cstat-no" title="statement not covered" >                mailingAddress.City = prospect.mailingAddressCity;</span>
+<span class="cstat-no" title="statement not covered" >                mailingAddress.State = prospect.mailingAddressState;</span>
+<span class="cstat-no" title="statement not covered" >                mailingAddress.Zip = prospect.mailingAddressZipCode;</span>
+<span class="cstat-no" title="statement not covered" >                mailingAddress.AddressType = 2;</span>
+<span class="cstat-no" title="statement not covered" >                address.push(mailingAddress);</span>
+&nbsp;
+                var phoneNumbers = <span class="cstat-no" title="statement not covered" >[] as any;</span>
+                var homePhone = <span class="cstat-no" title="statement not covered" >{} as any;</span>
+<span class="cstat-no" title="statement not covered" >                homePhone.Number = prospect.homePhone !== undefined ? prospect.homePhone.split('-').join('').split('(').join('').split(')').join('').split('_').join('') : '';</span>
+<span class="cstat-no" title="statement not covered" >                homePhone.PhoneType = 0;</span>
+<span class="cstat-no" title="statement not covered" >                phoneNumbers.push(homePhone);</span>
+&nbsp;
+                var workPhone = <span class="cstat-no" title="statement not covered" >{} as any;</span>
+<span class="cstat-no" title="statement not covered" >                workPhone.Number = prospect.workPhone !== undefined ? prospect.workPhone.split('-').join('').split('(').join('').split(')').join('').split('_').join('') : '';</span>
+<span class="cstat-no" title="statement not covered" >                workPhone.PhoneType = 1;</span>
+<span class="cstat-no" title="statement not covered" >                phoneNumbers.push(workPhone);</span>
+&nbsp;
+                var otherPhone = <span class="cstat-no" title="statement not covered" >{} as any;</span>
+<span class="cstat-no" title="statement not covered" >                otherPhone.Number = prospect.otherPhone !== undefined ? prospect.otherPhone.split('-').join('').split('(').join('').split(')').join('').split('_').join('') : '';</span>
+<span class="cstat-no" title="statement not covered" >                otherPhone.PhoneType = 5;</span>
+<span class="cstat-no" title="statement not covered" >                phoneNumbers.push(otherPhone);</span>
+&nbsp;
+                var incomeSource = <span class="cstat-no" title="statement not covered" >{}  as any;</span>
+<span class="cstat-no" title="statement not covered" >                incomeSource.SocialSecurity = prospect.socialSecurity;</span>
+<span class="cstat-no" title="statement not covered" >                incomeSource.Salary = prospect.incomeAccountSalary;</span>
+<span class="cstat-no" title="statement not covered" >                incomeSource.PensionBenefits = prospect.pensionBenefits;</span>
+<span class="cstat-no" title="statement not covered" >                incomeSource.InvestmentIncome = prospect.investmentIncome;</span>
+<span class="cstat-no" title="statement not covered" >                incomeSource.RMD = prospect.rmd;</span>
+<span class="cstat-no" title="statement not covered" >                incomeSource.Other = prospect.other;</span>
+<span class="cstat-no" title="statement not covered" >                incomeSource.ExpensesAmount = prospect.expensesAmount;</span>
+<span class="cstat-no" title="statement not covered" >                incomeSource.ClientProspectId = prospect.clientProspectId;</span>
+&nbsp;
+                var investorProfile = <span class="cstat-no" title="statement not covered" >{} as any;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.InvestmentExperience_Flag = prospect.previousFunds;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.Finra_Flag = prospect.FINRA;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.InvestmentObjective = prospect.investmentObjective;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.RiskProfile = prospect.riskProfile;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.HouseholdIncomeRange = prospect.annualHouseholdIncomeRange;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.NetWorthRange = prospect.netWorthRange;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.LifeInsuranceRange = prospect.lifeInsuranceRange;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.TaxBracketNumber = prospect.taxBracket;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.DepedentNumber = prospect.dependentsNo;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.Ages = prospect.ages;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.CurrentEmployer = prospect.currentEmployer;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.EmploymentStatus = prospect.employmentStatus;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.Occupation = prospect.occupation;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.EmployerAddress = prospect.employerAddress;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.EmployerCity = prospect.employerCity;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.EmployerState = prospect.employerState;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.EmployerZipCode = prospect.employerZipCode;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.HireDate = prospect.hireDate;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.ExpectedAnnuityDate = prospect.expectedAnnuityDate;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.Salary = prospect.employerSalary;</span>
+<span class="cstat-no" title="statement not covered" >                investorProfile.ClientId = prospect.clientProspectId;</span>
+&nbsp;
+                var prospectData = <span class="cstat-no" title="statement not covered" >{</span>
+                    Id: prospect.clientProspectId, FirstName: prospect.firstName, Title: prospect.title, MiddleInitial: prospect.middleInitial,
+                    LastName: prospect.lastName, Ssn: plainSSN, DateOfBirth: prospect.dateOfBirth, MaritalStatus: prospect.maritalStatus, ReferralDate: referral, Addresses: address,
+                    PhoneNumbers: phoneNumbers, Gender: prospect.gender, Email: prospect.emailAddress, ProspectIncomeSource: incomeSource,
+                    ProspectInvestorProfile: investorProfile, UsCitizenFlag: prospect.usCitizen
+                };
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return fetch(`${participantUrl}prospect/update`, {</span>
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(prospectData)
+                })
+                    .then(<span class="fstat-no" title="function not covered" >(</span>response:any) =&gt; {
+                        //next(ProspectAction.loaderComplete());
+<span class="cstat-no" title="statement not covered" >                        next(LoaderAction.actionCreators.loaderEnd());</span>
+<span class="cstat-no" title="statement not covered" >                        if (response.status &gt;= 200 &amp;&amp; response.status &lt; 300) {</span>
+                            (<span class="cstat-no" title="statement not covered" >window as any).location = agileneturl + "/Dashboard/Advisor/ClientProspectListing.aspx?agentId=03499";</span>
+                        } else {
+                            const error = <span class="cstat-no" title="statement not covered" >new Error(response.statusText) as any;</span>
+<span class="cstat-no" title="statement not covered" >                            error.response = response;</span>
+<span class="cstat-no" title="statement not covered" >                            throw error;</span>
+                        }
+                    })
+                    .catch(<span class="fstat-no" title="function not covered" >error =&gt; {</span>
+                        //next(ValidationMessage.AddErrorMessage('', "Unable to update prospect"));
+                        //next(ProspectAction.loaderComplete());
+<span class="cstat-no" title="statement not covered" >                        next(ValidationMessageAction.actionCreators.addErrorMessage('', "Unable to update prospect"));                        </span>
+<span class="cstat-no" title="statement not covered" >                        next(LoaderAction.actionCreators.loaderEnd());</span>
+&nbsp;
+                    })
+            }
+            else {
+<span class="cstat-no" title="statement not covered" >                next(ValidationMessageAction.actionCreators.addErrorMessage('', "Unable to update prospect"));</span>
+<span class="cstat-no" title="statement not covered" >                next(LoaderAction.actionCreators.loaderEnd());</span>
+            }
+<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="branch-3 cbranch-no" title="branch not covered" >        default:</span>
+            //console.log(action);
+<span class="cstat-no" title="statement not covered" >            next(action);</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+    }
+};
+&nbsp;
+&nbsp;
+export const errorHandler = <span class="fstat-no" title="function not covered" >state =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >next =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >action =&gt; {</span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        next(action);</span>
+    }
+    catch (err) {
+<span class="cstat-no" title="statement not covered" >        console.log("error caught");</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 20 2017 16:32:22 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

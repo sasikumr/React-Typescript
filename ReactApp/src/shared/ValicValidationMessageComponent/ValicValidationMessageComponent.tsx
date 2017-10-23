@@ -1,6 +1,15 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
-class ValicValidationMessage extends React.Component<any,any>{   
+interface ValicValidationMessageProps {
+    formErrors: ErrorMessage[];
+    className?: string;
+}
+interface ErrorMessage {
+    errorMessage: string;
+    fieldName: string;    
+}
+
+class ValicValidationMessage extends React.Component<ValicValidationMessageProps, {}>{   
     render(){      
         const {formErrors}   = this.props;
         return (<div className='form-errors'>

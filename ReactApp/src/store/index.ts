@@ -1,10 +1,10 @@
 //import * as WeatherForecasts from './WeatherForecasts';
 //import * as Counter from './Counter';
 
-import * as Loader from './Loader';
-import * as Prospect from './Prospect';
-import * as States from './States';
-import * as ValidationMessage from './ValidationMessage';
+import * as Loader from './loader';
+import * as Prospect from './prospect';
+import * as States from './states';
+import * as ValidationMessage from './validationMessage';
 
 //// The top-level state object
 //export interface ApplicationState {

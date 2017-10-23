@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for shared/ValicInputComponent/ValicInputComponent.tsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">shared/ValicInputComponent</a> ValicInputComponent.tsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.37% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>64/101</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">51.22% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>21/41</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>63/100</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿import React from 'react';
+import PropTypes from 'prop-types';
+import InputMask from 'react-input-mask';
+interface ValicInputProps {
+    name: string;
+    type: string;
+    onChange: (e) =&gt; void;
+    min?: string;
+    className?: string;
+    value: string;
+    mask?: string;
+    maskChar?: string;
+    placeholder?: string;
+    required?: any;
+}
+class ValicInput extends React.Component&lt;ValicInputProps&gt; {
+	constructor(props) {
+		super(props);
+		
+		this.onChangeEmail = this.onChangeEmail.bind(this);
+		this.onChangePhoneNumber = this.onChangePhoneNumber.bind(this);
+		this.onChangeSSN = this.onChangeSSN.bind(this);
+		this.onChangeText = this.onChangeText.bind(this);
+		this.onChangeNumber = this.onChangeNumber.bind(this);
+	}
+<span class="fstat-no" title="function not covered" >	onChangeText(</span>e) {
+<span class="cstat-no" title="statement not covered" >		e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >		if (this.props.onChange !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >			this.props.onChange(e);</span>
+		}
+	}
+<span class="fstat-no" title="function not covered" >	onChangeNumber(</span>e) {
+<span class="cstat-no" title="statement not covered" >		e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >		this.props.onChange(e);</span>
+	}
+	onChangeEmail(e) {
+		e.preventDefault();
+		let isValid = true;
+		let inputField = e.target;
+		isValid = this.isValid(inputField);
+		inputField.errorMessage = '';
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (isValid === false) {
+			//this.addError(this.state,inputField.name, inputField.name + " is required");
+<span class="cstat-no" title="statement not covered" >			inputField.isValid = false;</span>
+<span class="cstat-no" title="statement not covered" >			inputField.errorMessage = inputField.name + " is required";</span>
+		}
+		else {
+			inputField.isValid = true;
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (this.validateEmailFormat(inputField) === false) {
+<span class="cstat-no" title="statement not covered" >				inputField.isFormatValid = false;</span>
+<span class="cstat-no" title="statement not covered" >				inputField.errorMessage = inputField.name + ' is invalid';</span>
+			}
+			else {
+&nbsp;
+				inputField.isFormatValid = true;
+				inputField.errorMessage = '';
+				//$(inputField).parent().removeClass('has-error has-feedback');       
+				//this.addError(this.props.state,inputField.name, "");
+			}
+		}		
+		this.props.onChange(e);
+	}
+<span class="fstat-no" title="function not covered" >	onChangePhoneNumber(</span>e) {
+<span class="cstat-no" title="statement not covered" >		e.preventDefault();</span>
+		let isValid = <span class="cstat-no" title="statement not covered" >true;</span>
+		let inputField = <span class="cstat-no" title="statement not covered" >e.target;</span>
+<span class="cstat-no" title="statement not covered" >		isValid = this.isValid(inputField);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if (isValid === false) {</span>
+			//this.addError(this.state,inputField.name, inputField.name + " is required");
+<span class="cstat-no" title="statement not covered" >			inputField.isValid = false;</span>
+<span class="cstat-no" title="statement not covered" >			inputField.errorMessage = inputField.name + " is required";</span>
+		}
+		else {
+<span class="cstat-no" title="statement not covered" >			inputField.isValid = true;</span>
+<span class="cstat-no" title="statement not covered" >			if (this.validatePhoneNumberFormat(inputField) === false) {</span>
+				//$(inputField).parent().addClass('has-error has-feedback');       					
+<span class="cstat-no" title="statement not covered" >				inputField.isFormatValid = false;</span>
+<span class="cstat-no" title="statement not covered" >				inputField.errorMessage = inputField.name + ' is invalid';</span>
+			}
+			else {
+<span class="cstat-no" title="statement not covered" >				inputField.isFormatValid = true;</span>
+<span class="cstat-no" title="statement not covered" >				inputField.errorMessage = '';</span>
+&nbsp;
+			}
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		this.props.onChange(e);</span>
+	}
+	onChangeSSN(e) {
+		e.preventDefault();
+		let isValid = true;
+		let inputField = e.target;
+		isValid = this.isValid(inputField);
+&nbsp;
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (isValid === false) {
+<span class="cstat-no" title="statement not covered" >			inputField.isValid = false;</span>
+<span class="cstat-no" title="statement not covered" >			inputField.errorMessage = inputField.name + " is required";</span>
+		}
+		else {
+			inputField.isValid = true;
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (this.validateSSNFormat(inputField) === false) {
+<span class="cstat-no" title="statement not covered" >				inputField.isFormatValid = false;</span>
+<span class="cstat-no" title="statement not covered" >				inputField.errorMessage = inputField.name + ' is invalid';</span>
+			}
+			else {
+				inputField.isFormatValid = true;
+				inputField.errorMessage = '';
+&nbsp;
+			}
+		}
+&nbsp;
+		this.props.onChange(e);
+	}
+	validateEmailFormat(input) {
+		let isFormatValid = true;
+		let format = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (input.value !== "" &amp;&amp; format.test(input.value) === false) {
+<span class="cstat-no" title="statement not covered" >			isFormatValid = false;</span>
+		}
+		return isFormatValid;
+	}
+	validateSSNFormat(input) {
+		let isFormatValid = true;
+		let format = /^[0-9A-Z]{3}-[0-9A-Z]{2}-[0-9A-Z]{4}$/;
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (input.value !== "" &amp;&amp; format.test(input.value) === false) {
+<span class="cstat-no" title="statement not covered" >			isFormatValid = false;</span>
+		}
+		return isFormatValid;
+	}
+<span class="fstat-no" title="function not covered" >	validatePhoneNumberFormat(</span>input) {
+		let isFormatValid = <span class="cstat-no" title="statement not covered" >true;</span>
+		let format = <span class="cstat-no" title="statement not covered" >/(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}/;</span>
+<span class="cstat-no" title="statement not covered" >		if (input.value !== ""  &amp;&amp; format.test(input.value) === false) {</span>
+<span class="cstat-no" title="statement not covered" >			isFormatValid = false;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		return isFormatValid;</span>
+	}
+	isValid(input) {
+		let isValid = true;
+		//console.log(input)
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (input.getAttribute('required') !== null &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >input.value === "")</span> {
+			//$(input).parent().addClass('has-error has-feedback');           
+<span class="cstat-no" title="statement not covered" >			isValid = false;</span>
+		}
+		else {
+			// $(input).parent().removeClass('has-error has-feedback');
+			//input.nextSibling.textContent = "";
+			isValid = true;
+		}
+		return isValid;
+	}
+	render() {
+		let inputType = this.props.type !== undefined &amp;&amp; this.props.type !== null ? this.props.type : <span class="branch-1 cbranch-no" title="branch not covered" >"text";</span>
+		let inputControl;
+		const props = { ...this.props };
+&nbsp;
+		switch (inputType.toString().toLowerCase()) {
+<span class="branch-0 cbranch-no" title="branch not covered" >			case "phone":</span>
+<span class="cstat-no" title="statement not covered" >				inputControl = &lt;InputMask  {...props} onChange={this.onChangePhoneNumber} /&gt;;</span>
+<span class="cstat-no" title="statement not covered" >				break;</span>
+			case "number":
+				inputControl = &lt;input {...props} type="number" onChange={this.onChangeNumber} /&gt;;
+				break;
+			case "email":
+				inputControl = &lt;input {...props} type="email" onChange={this.onChangeEmail} /&gt;;
+				break;
+			case "ssn":
+				inputControl = &lt;InputMask  {...props} onChange={this.onChangeSSN} /&gt;;
+				break;
+			default:
+				inputControl = &lt;input {...props} type="text" onChange={this.onChangeText} /&gt;;
+				break;
+		}
+		return inputControl;
+	}	
+}
+&nbsp;
+&nbsp;
+&nbsp;
+export default ValicInput;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 20 2017 16:32:22 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

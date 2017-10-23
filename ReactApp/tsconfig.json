@@ -16,7 +16,8 @@
     "types": [ "webpack-env" ]
   },
   "exclude": [
-      "bin",
-      "node_modules"
-  ]
+    "bin",
+    "node_modules",
+    "JSUnitTests"
+  ]  
 }

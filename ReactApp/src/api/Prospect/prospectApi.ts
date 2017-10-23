@@ -1,7 +1,7 @@
 ﻿//import * as ProspectAction from '../../actions/ProspectAction';
-import  ApiUrl  from '../apiUrl.dev';
+import ApiUrl from '../apiUrl.dev';
 import fetch from 'isomorphic-fetch';
-import { agileneturl } from '../../constants';
+import { agileneturl } from '../../constants/index';
 //import * as ValidationMessage from '../../actions/ValidationMessageAction';
 import * as ActionTypes from '../../constants/ActionTypes';
 import * as LoaderAction from '../../store/Loader';

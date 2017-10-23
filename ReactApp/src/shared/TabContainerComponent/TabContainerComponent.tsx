@@ -1,7 +1,10 @@
 ﻿import React from 'react';
 import $ from 'jquery';
 import './TabContainer.css';
-const clearStyle = {clear:'both', height:'20px'};
+const clearStyle = { clear: 'both', height: '20px' };
+interface TabContainerProps {
+    childeren?: any[];
+}
 export class TabContainer extends React.Component<any,any> {       
     render(){
         const header = this.tabHeader();

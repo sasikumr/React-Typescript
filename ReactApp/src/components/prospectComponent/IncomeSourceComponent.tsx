@@ -1,14 +1,15 @@
 ﻿import React, { Component } from 'react';
-export interface IIncomeSourceProps {
+/*export interface IIncomeSourceProps {
 incomeAccountSalary?:string;
 socialSecurity?:string;
 pensionBenefits?: string;
 investmentIncome?: string;
 rmd?:string;
 other?:string;
-expensesAmount?:string;
-onChange:() => any;
-}
+expensesAmount?: string;
+onChange: Function;
+}*/
+
 class IncomeSource extends Component<any,any> {
     constructor(props) {
         super(props);

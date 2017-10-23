@@ -1,7 +1,19 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
-class ValicInput extends React.Component<any> {
+interface ValicInputProps {
+    name: string;
+    type: string;
+    onChange: (e) => void;
+    min?: string;
+    className?: string;
+    value: string;
+    mask?: string;
+    maskChar?: string;
+    placeholder?: string;
+    required?: any;
+}
+class ValicInput extends React.Component<ValicInputProps> {
 	constructor(props) {
 		super(props);
 		
@@ -161,14 +173,7 @@ class ValicInput extends React.Component<any> {
 				break;
 		}
 		return inputControl;
-	}
-
-
-	static propTypes = {
-		type: PropTypes.string.isRequired,
-		onChange: PropTypes.func.isRequired,
-		name: PropTypes.string.isRequired
-	}
+	}	
 }
 
 

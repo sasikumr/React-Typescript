@@ -27,12 +27,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="JSUnitTests\Tests\shared\ValicInput.spec.tsx" />
     <None Remove="src\prospectEdit.tsx" />
     <None Remove="src\store\ValidationMessage.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="JSUnitTests\Tests\shared\ValicInput.spec.tsx" />
     <TypeScriptCompile Include="src\store\validationMessage.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="JSUnitTests\Tests\componenets\prospectComponent\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

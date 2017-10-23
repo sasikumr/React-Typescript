@@ -1,7 +1,7 @@
 ﻿import React, { Component } from 'react';
 import ValicInput from '../../shared/ValicInputComponent/ValicInputComponent';
 import PropTypes from 'prop-types';
-import {errorClass} from '../../shared/utility/Utility';
+import {errorClass} from '../../shared/utility/utility';
 
 /*
 export interface IStates{
