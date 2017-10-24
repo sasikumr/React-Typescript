@@ -1,4 +1,4 @@
-﻿/*import React from 'react';
+﻿import React from 'react';
 import { mount, shallow } from 'enzyme';
 import ProspectEditContainer from '../../../../src/containers/prospectContainer/ProspectEditContainer';
 import ReactDOM from 'react-dom';
@@ -50,7 +50,7 @@ describe('Prospect Container',()=>{
         const store = configureStore(history, initialState);
         expect(store.getState().states.length).toEqual(0);
           window.__agentCode__ = '03499';
-          window.__PROSPECTID__ = 1963;
+          window.__PROSPECTID__ = '1963';
          const container = mount(<AppContainer>
               <Provider store={ store } >
               <ConnectedRouter history={ history } children= { routes } />
@@ -58,20 +58,11 @@ describe('Prospect Container',()=>{
               </Provider>
               </AppContainer>);
         expect(console.error).toBeCalled();        
-        expect(console.error.mock.calls.length).toBeGreaterThan(0);     
-        //container.find('type="submit"').simulate('click');
+        expect(console.error.mock.calls.length).toBeGreaterThan(0);       
         const form = container.find('form').at(0);
         const children = form.render().children().children();
         form.simulate('submit', { target: { children } });
-        //console.log(container.instance().getState..props['lastName'])
-        //form.simulate('su')
         console.log(container.instance().context.children)
-        //console.log(container.find('name="lastName"').get(0).value)
-
-        //expect(container.prop('states').length).toBeGreaterThan(0);
-        //store.dispatch(ProspectAction.fetchStatesRequest());
-        //expect(store.getState().states.length).toBeGreaterThan(0);
-        //mount()
-
+  
     })
-})*/
+})

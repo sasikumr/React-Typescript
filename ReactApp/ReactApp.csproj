@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="JSUnitTests\Tests\shared\ValicInput.spec.tsx" />
+    <TypeScriptCompile Include="JSUnitTests\Tests\store\prospect.spec.ts" />
     <TypeScriptCompile Include="src\store\validationMessage.ts" />
   </ItemGroup>
 

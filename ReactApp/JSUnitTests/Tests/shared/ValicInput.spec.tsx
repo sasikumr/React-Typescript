@@ -6,6 +6,7 @@ import { mount, shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
 import EnzymeAdapter from 'enzyme-adapter-react-15.4';
 import Enzyme from 'enzyme';
+
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 let generalProps;
 beforeAll(() => {
@@ -83,7 +84,7 @@ describe('ValicInput Component Test Case', () => {
             expect(wrapper.find('input').get(0).value).toBe('test@gmail.com')
 
             wrapper.setProps({ value: 'Test' })
-            wrapper.simulate('change');
+            wrapper.simulate('change', { target: { value: 'Test' }});
             expect(wrapper.find('input').get(0).isFormatValid).toBe(false)
             expect(wrapper.find('input').get(0).value).toBe('Test')
             

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for store/States.ts</title>
+    <title>Code coverage report for store/states.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\prettify.css" />
     <link rel="stylesheet" href="..\base.css" />
@@ -16,32 +16,32 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\index.html">All files</a> / <a href="index.html">store</a> States.ts
+      <a href="..\index.html">All files</a> / <a href="index.html">store</a> states.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">70% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/10</span>
+        <span class='fraction'>7/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>3/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">70% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/10</span>
+        <span class='fraction'>7/10</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -95,27 +95,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿import * as ActionTypes from '../constants/actionTypes'
 import { Action, Reducer } from 'redux';
@@ -132,27 +132,27 @@ interface FetchStatesFailed { type: 'GET_STATES_FAILED' }
 type KnownAction = FetchStateSuccess | FetchStateRequest | FetchStatesFailed;
 &nbsp;
 export const actionCreators = {
-    fetchStateRequest: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>&lt;FetchStateRequest&gt;{ type: 'GET_STATES_REQUEST' },</span>
+    fetchStateRequest: () =&gt; &lt;FetchStateRequest&gt;{ type: 'GET_STATES_REQUEST' },
     fetchStateSuccess: <span class="fstat-no" title="function not covered" >(</span>states) =&gt; <span class="cstat-no" title="statement not covered" >&lt;FetchStateSuccess&gt;{ type: 'GET_STATES_SUCCESS', states },</span>
     fetchStatesFailed: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>&lt;FetchStatesFailed&gt;{ type: 'GET_STATES_FAILED' }</span>
 };
 &nbsp;
 &nbsp;
-export const reducer: Reducer&lt;StatesState&gt; = <span class="fstat-no" title="function not covered" >(</span>state: StatesState, action: KnownAction) =&gt; {
-<span class="cstat-no" title="statement not covered" >    switch (action.type) {</span>
+export const reducer: Reducer&lt;StatesState&gt; = (state: StatesState, action: KnownAction) =&gt; {
+    switch (action.type) {
         case 'GET_STATES_SUCCESS':
-<span class="cstat-no" title="statement not covered" >            return Object.assign([], state, action.states);      </span>
-        case 'GET_STATES_REQUEST':
-        case 'GET_STATES_FAILED':
+            return Object.assign([], state, action.states);      
+<span class="branch-1 cbranch-no" title="branch not covered" >        case 'GET_STATES_REQUEST':</span>
+<span class="branch-2 cbranch-no" title="branch not covered" >        case 'GET_STATES_FAILED':</span>
 <span class="cstat-no" title="statement not covered" >            return Object.assign([], null,null);</span>
         default:
             // The following line guarantees that every action in the KnownAction union has been covered by a case above
-            const exhaustiveCheck: never = <span class="cstat-no" title="statement not covered" >action;</span>
+            const exhaustiveCheck: never = action;
     }
 &nbsp;
     // For unrecognized actions (or in cases where actions have no effect), must return the existing state
     //  (or default initial state if none was supplied)
-<span class="cstat-no" title="statement not covered" >    return state === undefined ? [] : state;</span>
+    return state === undefined ? [] : <span class="branch-1 cbranch-no" title="branch not covered" >state;</span>
 };
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -160,7 +160,7 @@ export const reducer: Reducer&lt;StatesState&gt; = <span class="fstat-no" title=
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 20 2017 16:32:22 GMT+0530 (India Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Oct 24 2017 12:38:41 GMT+0530 (India Standard Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>

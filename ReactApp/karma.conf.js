@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jest', 'requirejs'],
+    frameworks: ['mocha','typescript'],
 
 
     // list of files / patterns to load in the browser
@@ -33,19 +33,36 @@ module.exports = function(config) {
         'karma-webpack',
         'karma-firefox-launcher',
         'karma-jquery',
-        'karma-sinon'
+        'karma-sinon',
+        'karma-junit-reporter'
     ],
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        'lib/*.js': 'coverage'
+        '**/*.ts': ['typescript']
     },
-
-
+    typescriptPreprocessor: {
+        // options passed to the typescript compiler 
+        options: {
+            allowJs: true,
+            allowSyntheticDefaultImports: true,
+            sourceMap: false, // (optional) Generates corresponding .map file. 
+            target: 'ES5', // (optional) Specify ECMAScript target version: 'ES3' (default), or 'ES5' 
+            module: 'es2015', // (optional) Specify module code generation: 'commonjs' or 'amd' 
+            noImplicitAny: false, // (optional) Warn on expressions and declarations with an implied 'any' type. 
+            noResolve: true, // (optional) Skip resolution and preprocessing. 
+            removeComments: true, // (optional) Do not emit comments to output. 
+            concatenateOutput: false // (optional) Concatenate and emit output to single file. By default true if module option is omited, otherwise false. 
+        },
+        // transforming the filenames 
+        transformPath: function (path) {
+            return path.replace(/\.ts$/, '.js');
+        }
+    },
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress','coverage'],
+    reporters: ['progress'],
 
 
     // web server port
