@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/ProspectComponent/InvestorProfileComponent.tsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">src/components/ProspectComponent</a> InvestorProfileComponent.tsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.71% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">﻿import React, { Component } from 'react';
+import ValicInput from '../../shared/ValicInputComponent/ValicInputComponent';
+/*export interface IInvestorProfileProps{
+//states?: IState[];
+states?: any[];
+onChange: ()=&gt; void;
+previousFunds?: string;
+FINRA?: string;
+investmentObjective?:string;
+riskProfile?:string;
+annualHouseholdIncomeRange?:string;
+netWorthRange?:string;
+lifeInsuranceRange?: string;
+taxBracket?:string;
+dependentsNo?:string;
+ages?:string;
+currentEmployer?:string;
+employmentStatus?:string;
+occupation?:string;
+employerAddress?:string;
+employerCity?:string;
+employerState?:string;
+employerZipCode?:string;
+employerSalary?:string;
+hireDate?:any;
+expectedAnnuityDate?:any;
+}
+&nbsp;
+export interface IState{
+Code:string;
+}
+*/
+class InvestorProfile extends Component&lt;any,any&gt; {
+<span class="fstat-no" title="function not covered" >    constructor(</span>props) {
+<span class="cstat-no" title="statement not covered" >        super(props);</span>
+<span class="cstat-no" title="statement not covered" >        this.handleUserInput = this.handleUserInput.bind(this);</span>
+    }
+<span class="fstat-no" title="function not covered" >    handleUserInput(</span>e) {
+        const { <span class="cstat-no" title="statement not covered" >onChange </span>} = this.props;
+<span class="cstat-no" title="statement not covered" >        onChange(e);</span>
+    }
+<span class="fstat-no" title="function not covered" >    render() {</span>
+        let { <span class="cstat-no" title="statement not covered" >states </span>} = this.props;
+        let statesListDown;
+<span class="cstat-no" title="statement not covered" >        if (states !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >            statesListDown = Object.keys(states).map(<span class="fstat-no" title="function not covered" >(</span>key, index) =&gt; { <span class="cstat-no" title="statement not covered" >return &lt;option key={index} value={states[key].Code} &gt;{states[key].Code}&lt;/option&gt; </span>})</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return (&lt;div&gt;</span>
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-12"&gt;
+                    &lt;label htmlFor="previousFunds"&gt;Previously purchased mutual funds or other securities?&lt;/label&gt;
+                    &lt;span className="checkbox" onChange={this.handleUserInput}&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" checked={this.props.previousFunds === "1"} name="previousFunds" value="1" /&gt;Yes
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" value="0" name="previousFunds" checked={this.props.previousFunds === "0"} /&gt;No
+                            &lt;/label&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-12"&gt;
+                    &lt;label htmlFor="FINRA"&gt;Employed by or registered with a FINRA member firm?&lt;/label&gt;
+                    &lt;span className="checkbox" onChange={this.handleUserInput}&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="FINRA" value="1" checked={this.props.FINRA === "1"} /&gt;Yes
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="FINRA" value="0" checked={this.props.FINRA === "0"} /&gt;No
+                            &lt;/label&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+&nbsp;
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-12"&gt;
+                    &lt;label htmlFor="investmentObjective"&gt;Investment Objective&lt;/label&gt;
+                    &lt;span className="checkbox" onChange={this.handleUserInput}&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="investmentObjective" value="SP" checked={this.props.investmentObjective === "SP"} /&gt;Safety of Principal
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="investmentObjective" value="LG" checked={this.props.investmentObjective === "LG"} /&gt;Long-Term Growth
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="investmentObjective" value="IN" checked={this.props.investmentObjective === "IN"} /&gt;Income
+                            &lt;/label&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-12"&gt;
+                    &lt;label htmlFor="riskProfile"&gt;Risk Profile&lt;/label&gt;
+                    &lt;select name="riskProfile" value={this.props.riskProfile} onChange={this.handleUserInput}&gt;
+                        &lt;option value=""&gt;&lt;/option&gt;
+                        &lt;option value="HR"&gt;Higher Risk&lt;/option&gt;
+                        &lt;option value="AG"&gt;Aggressive&lt;/option&gt;
+                        &lt;option value="MA"&gt;Moderately Aggressive&lt;/option&gt;
+                        &lt;option value="MD"&gt;Moderate&lt;/option&gt;
+                        &lt;option value="MC"&gt;Moderately Conservative&lt;/option&gt;
+                        &lt;option value="CN"&gt;Conservative&lt;/option&gt;
+                        &lt;option value="CA"&gt;Cautious&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;span&gt; Financial Situation&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-12"&gt;
+                    &lt;label htmlFor="annualHouseholdIncomeRange"&gt;Annual Household Income Range&lt;/label&gt;
+                    &lt;span className="checkbox" onChange={this.handleUserInput}&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="annualHouseholdIncomeRange" value="01" checked={this.props.annualHouseholdIncomeRange === "01"} /&gt;Under $50,000
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="annualHouseholdIncomeRange" value="02" checked={this.props.annualHouseholdIncomeRange === "02"} /&gt;$50,000 - $100,000
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="annualHouseholdIncomeRange" value="03" checked={this.props.annualHouseholdIncomeRange === "03"} /&gt;Over $100,000
+                            &lt;/label&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-12"&gt;
+                    &lt;label htmlFor="netWorthRange"&gt;Net Worth Range&lt;/label&gt;
+                    &lt;span className="checkbox" onChange={this.handleUserInput}&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="netWorthRange" value="1" checked={this.props.netWorthRange === "1"} /&gt;Under $50,000
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="netWorthRange" value="2" checked={this.props.netWorthRange === "2"} /&gt;$50,000 - $100,000
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="netWorthRange" value="3" checked={this.props.netWorthRange === "3"} /&gt;Over $100,000
+                            &lt;/label&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-12"&gt;
+                    &lt;label htmlFor="lifeInsuranceRange"&gt;Life Insurance Range&lt;/label&gt;
+                    &lt;span className="checkbox" onChange={this.handleUserInput}&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="lifeInsuranceRange" value="01" checked={this.props.lifeInsuranceRange === "01"} /&gt;Under $50,000
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="lifeInsuranceRange" value="02" checked={this.props.lifeInsuranceRange === "02"} /&gt;$50,000 - $100,000
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="lifeInsuranceRange" value="03" checked={this.props.lifeInsuranceRange === "03"} /&gt;Over $100,000
+                            &lt;/label&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-3"&gt;
+                    &lt;label htmlFor="taxBracket"&gt;Tax Bracket&lt;/label&gt;
+                    &lt;ValicInput type="number" min="0" name="taxBracket" className="form-control" onChange={this.handleUserInput} value={this.props.taxBracket} /&gt;
+                &lt;/div&gt;
+                &lt;div className="form-group col-sm-3"&gt;
+                    &lt;label htmlFor="dependentsNo"&gt;Dependents:  Number&lt;/label&gt;
+                    &lt;ValicInput type="number" min="0" name="dependentsNo" className="form-control" onChange={this.handleUserInput} value={this.props.dependentsNo} /&gt;
+                &lt;/div&gt;
+                &lt;div className="form-group col-sm-3"&gt;
+                    &lt;label htmlFor="ages"&gt;Ages&lt;/label&gt;
+                    &lt;ValicInput type="number" min="0" name="ages" className="form-control" onChange={this.handleUserInput} value={this.props.ages} /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;hr className="half-rule" /&gt;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-4"&gt;
+                    &lt;label htmlFor="currentEmployer"&gt;Current Employer&lt;/label&gt;
+                    &lt;input type="text" name="currentEmployer" className="form-control" onChange={this.handleUserInput} value={this.props.currentEmployer} /&gt;
+                &lt;/div&gt;
+                &lt;div className="form-group col-sm-8"&gt;
+                    &lt;label htmlFor="occupation"&gt;Occupation&lt;/label&gt;
+                    &lt;input type="text" name="occupation" className="form-control" onChange={this.handleUserInput} value={this.props.occupation} /&gt;
+                    &lt;span className="checkbox" onChange={this.handleUserInput}&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="employmentStatus" value="R" checked={this.props.employmentStatus === "R"} /&gt;Retired
+                            &lt;/label&gt;
+                        &lt;label className="radio-inline"&gt;
+                            &lt;input type="radio" name="employmentStatus" value="U" checked={this.props.employmentStatus === "U"} /&gt;Unemployed
+                            &lt;/label&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+&nbsp;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-4"&gt;
+                    &lt;label htmlFor="employerAddress"&gt;Employer Address&lt;/label&gt;
+                    &lt;input type="text" name="employerAddress" className="form-control" onChange={this.handleUserInput} value={this.props.employerAddress} /&gt;
+                &lt;/div&gt;
+                &lt;div className="form-group col-sm-4"&gt;
+                    &lt;label htmlFor="employerCity"&gt;City&lt;/label&gt;
+                    &lt;input type="text" name="employerCity" className="form-control" onChange={this.handleUserInput} value={this.props.employerCity} /&gt;
+                &lt;/div&gt;
+                &lt;div className="form-group col-sm-2"&gt;
+                    &lt;label htmlFor="employerState"&gt;State&lt;/label&gt;
+                    &lt;select name="employerState" className="form-control" onChange={this.handleUserInput} value={this.props.employerState}&gt;
+                        &lt;option value=""&gt;&lt;/option&gt;
+                        {statesListDown}
+                    &lt;/select&gt;
+                &lt;/div&gt;
+                &lt;div className="form-group col-sm-2"&gt;
+                    &lt;label htmlFor="employerZipCode"&gt;ZipCode&lt;/label&gt;
+                    &lt;input type="text" name="employerZipCode" max-length="5" className="form-control" onChange={this.handleUserInput} value={this.props.employerZipCode} /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div className="row"&gt;
+                &lt;div className="form-group col-sm-2"&gt;
+                    &lt;label htmlFor="employerSalary"&gt;Salary&lt;/label&gt;
+                    &lt;input type="number" name="employerSalary" className="form-control" min="0" onChange={this.handleUserInput} value={this.props.employerSalary} /&gt;
+                &lt;/div&gt;
+                &lt;div className="form-group col-sm-3"&gt;
+                    &lt;label htmlFor="hireDate"&gt;Hire Date&lt;/label&gt;
+                    &lt;input type="date" name="hireDate" className="form-control" onChange={this.handleUserInput} value={this.props.hireDate} /&gt;
+                &lt;/div&gt;
+                &lt;div className="form-group col-sm-3"&gt;
+                    &lt;label htmlFor="expectedAnnuityDate"&gt;Expected Annuity Date&lt;/label&gt;
+                    &lt;input type="date" name="expectedAnnuityDate" className="form-control" onChange={this.handleUserInput} value={this.props.expectedAnnuityDate} /&gt;
+                &lt;/div&gt;
+&nbsp;
+            &lt;/div&gt;
+        &lt;/div&gt;);
+    }
+}
+export default InvestorProfile;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Oct 25 2017 16:35:17 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

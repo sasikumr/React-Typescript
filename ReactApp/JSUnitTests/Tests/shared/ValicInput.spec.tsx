@@ -4,18 +4,14 @@ import ReactDOM from 'react-dom';
 import TestUtils from 'react-dom/test-utils';
 import { mount, shallow } from 'enzyme';
 import renderer from 'react-test-renderer';
-import EnzymeAdapter from 'enzyme-adapter-react-15.4';
-import Enzyme from 'enzyme';
-
-Enzyme.configure({ adapter: new EnzymeAdapter() });
 let generalProps;
 beforeAll(() => {
     const props = {
         onChange: jest.fn(),
         type: 'text',
         name: 'valicInput'
-    }   
-    generalProps = props;    
+    }
+    generalProps = props;
 });
 describe('ValicInput Component Test Case', () => {
     describe('General Case', () => {
@@ -27,7 +23,7 @@ describe('ValicInput Component Test Case', () => {
         it('default type text', () => {
             const onChange = jest.fn();
             let component = TestUtils.renderIntoDocument(
-                <ValicInput name="valicInput" value="text" type="mask" onChange={onChange} />
+                <ValicInput name="valicInput" type="mask" onChange={onChange} />
             );
             let element = ReactDOM.findDOMNode(component);
             expect(element.type).toBe('text');
@@ -55,8 +51,8 @@ describe('ValicInput Component Test Case', () => {
         it('Event Simulate ssn change', () => {
             const mockfn = jest.fn();
             const wrapper = mount(<ValicInput name="valicInput" type="ssn" onChange={mockfn} value="" />);
-            expect(wrapper.find('input').get(0).value).toBeUndefined()
-            
+            expect(wrapper.find('input').get(0).value).toBe('')
+            let inputt = wrapper.find('input').get(0);
             wrapper.setProps({ value: 'A11-43-9999' })
             wrapper.simulate('change');
             expect(wrapper.find('input').get(0).isFormatValid).toBe(true)
@@ -74,20 +70,18 @@ describe('ValicInput Component Test Case', () => {
         });
         it('Event Simulate email change', () => {
             const mockfn = jest.fn();
-            
             const wrapper = mount(<ValicInput name="testinput" type="email" onChange={mockfn} value="invalid" />);
-            expect(wrapper.find('input').get(0).value).toBe('Invalid');
-            
-            wrapper.setProps({ value: 'test@gmail.com' });
-            wrapper.simulate('change');            
+            expect(wrapper.find('input').get(0).value).toBe('invalid')
+            let inputt = wrapper.find('input').get(0);
+            wrapper.setProps({ value: 'test@gmail.com' })
+            wrapper.simulate('change');
             expect(wrapper.find('input').get(0).isFormatValid).toBe(true)
             expect(wrapper.find('input').get(0).value).toBe('test@gmail.com')
 
             wrapper.setProps({ value: 'Test' })
-            wrapper.simulate('change', { target: { value: 'Test' }});
+            wrapper.simulate('change');
             expect(wrapper.find('input').get(0).isFormatValid).toBe(false)
             expect(wrapper.find('input').get(0).value).toBe('Test')
-            
         });
 
     });
@@ -101,5 +95,30 @@ describe('ValicInput Component Test Case', () => {
             expect(element.type).toBe('number');
         })
     });
-
+    describe('Snapshot', () => {
+        it('SSN snapshot', () => {
+            const control = renderer.create(<ValicInput {...generalProps} type="ssn" value="123-11-1111" />);
+            expect(control.toJSON()).toMatchSnapshot();
+        });
+        it('Email snapshot', () => {
+            const onChange = jest.fn();
+            const control = renderer.create(<ValicInput name="valicInput" onChange={onChange} type="email" value="test@email.com" />);
+            expect(control.toJSON()).toMatchSnapshot();
+        });
+        it('Phone snapshot', () => {
+            const onChange = jest.fn();
+            const control = renderer.create(<ValicInput name="valicInput" onChange={onChange} type="phone" mask="\(999\)999\-9999" maskChar="_" />);
+            expect(control.toJSON()).toMatchSnapshot();
+        });
+        it('Text snapshot', () => {
+            const onChange = jest.fn();
+            const control = renderer.create(<ValicInput {...generalProps} value="Text" />);
+            expect(control.toJSON()).toMatchSnapshot();
+        });
+        it('Number snapshot', () => {
+            const onChange = jest.fn();
+            const control = renderer.create(<ValicInput {...generalProps} type="number" value="3" />);
+            expect(control.toJSON()).toMatchSnapshot();
+        });
+    });
 });

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/configureStore.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">src</a> configureStore.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createStore, applyMiddleware, compose, combineReducers, GenericStoreEnhancer, Store, StoreEnhancerStoreCreator, ReducersMapObject } from 'redux';
+import thunk from 'redux-thunk';
+import { routerReducer, routerMiddleware } from 'react-router-redux';
+import * as StoreModule from './store';
+import { ApplicationState, reducers } from './store';
+import { History } from 'history';
+import { ProspectMiddleWare, errorHandler } from './api/Prospect/ProspectApi';
+&nbsp;
+export default<span class="fstat-no" title="function not covered" > function configureStore(</span>history: History, initialState?: ApplicationState) {
+    // Build middleware. These are functions that can process the actions before they reach the store.
+    const windowIfDefined = <span class="cstat-no" title="statement not covered" >typeof window === 'undefined' ? null : window as any;</span>
+    // If devTools is installed, connect to it
+    const devToolsExtension = <span class="cstat-no" title="statement not covered" >windowIfDefined &amp;&amp; windowIfDefined.devToolsExtension as () =&gt; GenericStoreEnhancer;</span>
+    const createStoreWithMiddleware = <span class="cstat-no" title="statement not covered" >compose(</span>
+        applyMiddleware(thunk, errorHandler, ProspectMiddleWare, routerMiddleware(history)),
+        devToolsExtension ? devToolsExtension() : <span class="fstat-no" title="function not covered" >&lt;S&gt;(</span>next: StoreEnhancerStoreCreator&lt;S&gt;) =&gt; <span class="cstat-no" title="statement not covered" >next</span>
+    )(createStore);
+&nbsp;
+    // Combine all reducers and instantiate the app-wide store instance
+    const allReducers = <span class="cstat-no" title="statement not covered" >buildRootReducer(reducers);</span>
+    const store = <span class="cstat-no" title="statement not covered" >createStoreWithMiddleware(allReducers, initialState) as Store&lt;ApplicationState&gt;;</span>
+&nbsp;
+    // Enable Webpack hot module replacement for reducers
+<span class="cstat-no" title="statement not covered" >    if (module.hot) {</span>
+<span class="cstat-no" title="statement not covered" >        module.hot.accept('./store', <span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+            const nextRootReducer = <span class="cstat-no" title="statement not covered" >require&lt;typeof StoreModule&gt;('./store');</span>
+<span class="cstat-no" title="statement not covered" >            store.replaceReducer(buildRootReducer(nextRootReducer.reducers));</span>
+        });
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return store;</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function buildRootReducer(</span>allReducers: ReducersMapObject) {
+<span class="cstat-no" title="statement not covered" >    return combineReducers&lt;ApplicationState&gt;(Object.assign({}, allReducers, { routing: routerReducer }));</span>
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Oct 25 2017 16:35:17 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>

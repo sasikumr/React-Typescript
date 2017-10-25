@@ -81,7 +81,7 @@ describe('ValicInput Component Test Case', () => {
             wrapper.setProps({ value: 'test@gmail.com' });
             wrapper.simulate('change');
             expect(wrapper.find('input').get(0).isFormatValid).toBe(true)
-            expect(wrapper.find('input').get(0).value).toBe('test@gmail.com')
+            expect(wrapper.find('input').get(0).value).toBe('test@gmail.com1')
 
             wrapper.setProps({ value: 'Test' })
             wrapper.simulate('change', { target: { value: 'Test' } });

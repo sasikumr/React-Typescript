@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ValicInput Component Test Case Snapshot Email snapshot 1`] = `
+<input
+  name="valicInput"
+  onChange={[Function]}
+  type="email"
+  value="test@email.com"
+/>
+`;
+
+exports[`ValicInput Component Test Case Snapshot Number snapshot 1`] = `
+<input
+  name="valicInput"
+  onChange={[Function]}
+  type="number"
+  value="3"
+/>
+`;
+
+exports[`ValicInput Component Test Case Snapshot Phone snapshot 1`] = `
+<input
+  name="valicInput"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onPaste={[Function]}
+  type="phone"
+/>
+`;
+
+exports[`ValicInput Component Test Case Snapshot SSN snapshot 1`] = `
+<input
+  name="valicInput"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  type="ssn"
+  value="123-11-1111"
+/>
+`;
+
+exports[`ValicInput Component Test Case Snapshot Text snapshot 1`] = `
+<input
+  name="valicInput"
+  onChange={[Function]}
+  type="text"
+  value="Text"
+/>
+`;

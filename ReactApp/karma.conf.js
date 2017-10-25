@@ -10,14 +10,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha','typescript'],
+    frameworks: ['karma-typescript','mocha'],
 
 
     // list of files / patterns to load in the browser
-    files: [
-        'tests.webpack.js', 'JSUnitTests/lib/bootstrap.min.js',
-        'JSUnitTests/lib/jquery.easing.1.3.js',
-      {pattern: 'JSUnitTests/Test/*.spect.ts', included: false}
+    files: [    
+      {pattern: 'JSUnitTests/Test/*.spec.ts', included: false}
     ],
 
     
@@ -26,20 +24,11 @@ module.exports = function(config) {
     ],
 
     plugins: [
-        'karma-chrome-launcher',
-        'karma-mocha',
-        'karma-mocha-reporter',
-        'karma-sourcemap-loader',
-        'karma-webpack',
-        'karma-firefox-launcher',
-        'karma-jquery',
-        'karma-sinon',
-        'karma-junit-reporter'
     ],
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        '**/*.ts': ['typescript']
+        '**/*.ts': ['karma-typescript']
     },
     typescriptPreprocessor: {
         // options passed to the typescript compiler 
@@ -93,38 +82,6 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity,
-    webpack: {
-        devtool: 'inline-source-map',
-        module: {
-            loaders: [
-                {
-                    test: /\.tsx?$/, exclude: /node_modules/,
-                    loader: 'awesome-typescript-loader?silent=true'
-                    
-                },
-                //See https://github.com/airbnb/enzyme/issues/309 as to why json loader is needed. 
-                {
-                    test: /\.json$/,
-                    loader: 'json',
-                },
-                { test: /\.svg$/, loader: 'url?limit=65000&mimetype=image/svg+xml' },
-                {
-                    test: /\.css$/,
-                    loader: "style-loader!css-loader"
-                }
-            ]
-        },
-        //Needed for enzyme working with webpack & React 15.0.x. See http://airbnb.io/enzyme/docs/guides/webpack.html#react-15-compatability 
-        externals: {
-            'react/addons': true,
-            'react/lib/ExecutionEnvironment': true,
-            'react/lib/ReactContext': true
-        },
-        watch: true
-    },
-    webpackServer: {
-        noInfo: true
-    }
+    concurrency: Infinity
   })
 }

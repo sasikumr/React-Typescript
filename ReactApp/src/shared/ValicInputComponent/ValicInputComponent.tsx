@@ -1,5 +1,4 @@
 ﻿import React from 'react';
-import PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 interface ValicInputProps {
     name: string;
