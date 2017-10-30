@@ -3,9 +3,9 @@ import $ from 'jquery';
 import './TabContainer.css';
 const clearStyle = { clear: 'both', height: '20px' };
 interface TabContainerProps {
-    childeren?: any[];
+    children: JSX.Element[];
 }
-export class TabContainer extends React.Component<any,any> {       
+export class TabContainer extends React.Component<TabContainerProps> {       
     render(){
         const header = this.tabHeader();
         var customStyle = {
@@ -39,14 +39,19 @@ export class TabContainer extends React.Component<any,any> {
     }
 }
 
-/*
-declare namespace JSX {
-    interface IntrinsicElements {
-        nobr: any
-    }
-}*/
-
-class TabHeader extends React.Component<any,any>{
+interface TabHeaderProps {
+    id: string;
+    headerName: string;
+    index: number;
+    isDefault?: boolean;
+}
+interface TabHeaderState {
+    id: string;
+    index: number;
+    isDefault?: boolean;
+    currentTabIndex: number;
+}
+class TabHeader extends React.Component<TabHeaderProps, TabHeaderState>{
     constructor(props){
         super(props);
         this.state ={ id: this.props.id + "Tab",index : this.props.index, isDefault: this.props.isDefault, currentTabIndex: 0 };
@@ -85,8 +90,12 @@ class TabHeader extends React.Component<any,any>{
     componentWillUpdate(){
     }
 }
+interface TabProps {
+    name: string;
+    isDefaultTab?: boolean;
+}
 
-export class Tab extends React.Component<any,any> {
+export class Tab extends React.Component<TabProps> {
    render(){
 		let id = this.props.name.split(' ').join('');
         return (<div id = {id + "Box"} name = "contentBox" className = "noShow react-tabContent" > 

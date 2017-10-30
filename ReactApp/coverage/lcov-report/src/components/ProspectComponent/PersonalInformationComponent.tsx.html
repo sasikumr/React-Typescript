@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">36.84% </span>
+        <span class="strong">73.68% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>7/19</span>
+        <span class='fraction'>14/19</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">83.33% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>5/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">16.67% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/6</span>
+        <span class='fraction'>3/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">35.29% </span>
+        <span class="strong">76.47% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/17</span>
+        <span class='fraction'>13/17</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -302,9 +302,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -316,14 +316,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -548,10 +548,10 @@ Code:string;
 }*/
 &nbsp;
 class PersonalInformation extends Component&lt;any, any&gt; {
-<span class="fstat-no" title="function not covered" >    constructor(</span>props) {
-<span class="cstat-no" title="statement not covered" >        super(props);</span>
-<span class="cstat-no" title="statement not covered" >        this.handleUserInput = this.handleUserInput.bind(this);</span>
-<span class="cstat-no" title="statement not covered" >        this.valicInputChange = this.valicInputChange.bind(this);</span>
+    constructor(props) {
+        super(props);
+        this.handleUserInput = this.handleUserInput.bind(this);
+        this.valicInputChange = this.valicInputChange.bind(this);
     }
 <span class="fstat-no" title="function not covered" >    valicInputChange(</span>e){
         const { <span class="cstat-no" title="statement not covered" >valicInputChange </span>} = this.props;
@@ -562,15 +562,15 @@ class PersonalInformation extends Component&lt;any, any&gt; {
 <span class="cstat-no" title="statement not covered" >        onChange(e);</span>
     }   
     
-<span class="fstat-no" title="function not covered" >    render() {</span>
-        let { <span class="cstat-no" title="statement not covered" >states </span>} = this.props;
+    render() {
+        let { states } = this.props;
         let statesListDown;
-<span class="cstat-no" title="statement not covered" >        if (states !== undefined) {</span>
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (states !== undefined) {
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            statesListDown = Object.keys(states).map(<span class="fstat-no" title="function not covered" >(</span>key, index) =&gt; { <span class="cstat-no" title="statement not covered" >return &lt;option key={index} value={states[key].Code} &gt;{states[key].Code}&lt;/option&gt; </span>})</span>
+            statesListDown = Object.keys(states).map(<span class="fstat-no" title="function not covered" >(</span>key, index) =&gt; { <span class="cstat-no" title="statement not covered" >return &lt;option key={index} value={states[key].Code} &gt;{states[key].Code}&lt;/option&gt; </span>})
         }
         //= states !== undefined ? states.map((item, index) =&gt; { return &lt;option key={index} value= {item.Code}&gt;{item.Code}&lt;/option&gt;}): '';				
-<span class="cstat-no" title="statement not covered" >        return (</span>
+        return (
             &lt;div&gt;
                 &lt;div className="row form-group"&gt;
                     &lt;div className="form-group col-sm-2"&gt;
@@ -790,7 +790,7 @@ export default PersonalInformation;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Oct 25 2017 16:35:17 GMT+0530 (India Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 27 2017 16:35:00 GMT+0530 (India Standard Time)
 </div>
 </div>
 <script src="..\..\..\prettify.js"></script>

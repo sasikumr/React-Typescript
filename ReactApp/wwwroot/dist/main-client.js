@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ca762ba92d33b57cb175"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "23d62e50a1a2962d9c7d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -11136,12 +11136,6 @@ var TabContainer = /** @class */ (function (_super) {
     return TabContainer;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component));
 
-/*
-declare namespace JSX {
-    interface IntrinsicElements {
-        nobr: any
-    }
-}*/
 var TabHeader = /** @class */ (function (_super) {
     __extends(TabHeader, _super);
     function TabHeader(props) {
